@@ -16,5 +16,10 @@ namespace Restaurant_System.Page
         {
             InitializeComponent();
         }
+
+        private void TableSeating_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

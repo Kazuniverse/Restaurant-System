@@ -34,9 +34,20 @@ namespace Restaurant_System
         }
         public void LoadPage(UserControl halaman)
         {
+            panelContainer.Visible = false;
+
             panelContainer.Controls.Clear();
             Dock = DockStyle.Fill;
+            
+
             panelContainer.Controls.Add(halaman);
+
+            panelContainer.Visible = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadPage(new TableSeating());
         }
     }
 }

@@ -36,23 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transactionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.restaurantTableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderDetailIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuItemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,19 +43,37 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.transactionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.restaurantTableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(10, 20);
             this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.panel1.Name = "panel1";
@@ -81,7 +82,7 @@
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(10, 130);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -92,7 +93,7 @@
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(10, 235);
             this.panel3.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -103,7 +104,7 @@
             // 
             // panel4
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.dataGridView3);
             this.panel4.Location = new System.Drawing.Point(10, 340);
             this.panel4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -169,55 +170,51 @@
             this.dataGridView3.Size = new System.Drawing.Size(630, 85);
             this.dataGridView3.TabIndex = 2;
             // 
-            // transactionBindingSource
+            // orderDetailIDDataGridViewTextBoxColumn
             // 
-            this.transactionBindingSource.DataSource = typeof(Restaurant_System.Transaction);
+            this.orderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "OrderDetailID";
+            this.orderDetailIDDataGridViewTextBoxColumn.HeaderText = "OrderDetailID";
+            this.orderDetailIDDataGridViewTextBoxColumn.Name = "orderDetailIDDataGridViewTextBoxColumn";
             // 
-            // transactionIDDataGridViewTextBoxColumn
+            // orderIDDataGridViewTextBoxColumn1
             // 
-            this.transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
             // 
-            // tableIDDataGridViewTextBoxColumn
+            // menuItemIDDataGridViewTextBoxColumn
             // 
-            this.tableIDDataGridViewTextBoxColumn.DataPropertyName = "TableID";
-            this.tableIDDataGridViewTextBoxColumn.HeaderText = "TableID";
-            this.tableIDDataGridViewTextBoxColumn.Name = "tableIDDataGridViewTextBoxColumn";
+            this.menuItemIDDataGridViewTextBoxColumn.DataPropertyName = "MenuItemID";
+            this.menuItemIDDataGridViewTextBoxColumn.HeaderText = "MenuItemID";
+            this.menuItemIDDataGridViewTextBoxColumn.Name = "menuItemIDDataGridViewTextBoxColumn";
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // quantityDataGridViewTextBoxColumn
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
-            // transactionDateDataGridViewTextBoxColumn
+            // priceDataGridViewTextBoxColumn
             // 
-            this.transactionDateDataGridViewTextBoxColumn.DataPropertyName = "TransactionDate";
-            this.transactionDateDataGridViewTextBoxColumn.HeaderText = "TransactionDate";
-            this.transactionDateDataGridViewTextBoxColumn.Name = "transactionDateDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
-            // statusDataGridViewTextBoxColumn
+            // menuItemDataGridViewTextBoxColumn
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.menuItemDataGridViewTextBoxColumn.DataPropertyName = "MenuItem";
+            this.menuItemDataGridViewTextBoxColumn.HeaderText = "MenuItem";
+            this.menuItemDataGridViewTextBoxColumn.Name = "menuItemDataGridViewTextBoxColumn";
             // 
-            // ordersDataGridViewTextBoxColumn
+            // orderDataGridViewTextBoxColumn
             // 
-            this.ordersDataGridViewTextBoxColumn.DataPropertyName = "Orders";
-            this.ordersDataGridViewTextBoxColumn.HeaderText = "Orders";
-            this.ordersDataGridViewTextBoxColumn.Name = "ordersDataGridViewTextBoxColumn";
+            this.orderDataGridViewTextBoxColumn.DataPropertyName = "Order";
+            this.orderDataGridViewTextBoxColumn.HeaderText = "Order";
+            this.orderDataGridViewTextBoxColumn.Name = "orderDataGridViewTextBoxColumn";
             // 
-            // restaurantTableDataGridViewTextBoxColumn
+            // orderDetailBindingSource
             // 
-            this.restaurantTableDataGridViewTextBoxColumn.DataPropertyName = "RestaurantTable";
-            this.restaurantTableDataGridViewTextBoxColumn.HeaderText = "RestaurantTable";
-            this.restaurantTableDataGridViewTextBoxColumn.Name = "restaurantTableDataGridViewTextBoxColumn";
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(Restaurant_System.Order);
+            this.orderDetailBindingSource.DataSource = typeof(Restaurant_System.OrderDetail);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -261,51 +258,55 @@
             this.transactionDataGridViewTextBoxColumn.HeaderText = "Transaction";
             this.transactionDataGridViewTextBoxColumn.Name = "transactionDataGridViewTextBoxColumn";
             // 
-            // orderDetailBindingSource
+            // orderBindingSource
             // 
-            this.orderDetailBindingSource.DataSource = typeof(Restaurant_System.OrderDetail);
+            this.orderBindingSource.DataSource = typeof(Restaurant_System.Order);
             // 
-            // orderDetailIDDataGridViewTextBoxColumn
+            // transactionIDDataGridViewTextBoxColumn
             // 
-            this.orderDetailIDDataGridViewTextBoxColumn.DataPropertyName = "OrderDetailID";
-            this.orderDetailIDDataGridViewTextBoxColumn.HeaderText = "OrderDetailID";
-            this.orderDetailIDDataGridViewTextBoxColumn.Name = "orderDetailIDDataGridViewTextBoxColumn";
+            this.transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
+            this.transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
+            this.transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
             // 
-            // orderIDDataGridViewTextBoxColumn1
+            // tableIDDataGridViewTextBoxColumn
             // 
-            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
+            this.tableIDDataGridViewTextBoxColumn.DataPropertyName = "TableID";
+            this.tableIDDataGridViewTextBoxColumn.HeaderText = "TableID";
+            this.tableIDDataGridViewTextBoxColumn.Name = "tableIDDataGridViewTextBoxColumn";
             // 
-            // menuItemIDDataGridViewTextBoxColumn
+            // customerNameDataGridViewTextBoxColumn
             // 
-            this.menuItemIDDataGridViewTextBoxColumn.DataPropertyName = "MenuItemID";
-            this.menuItemIDDataGridViewTextBoxColumn.HeaderText = "MenuItemID";
-            this.menuItemIDDataGridViewTextBoxColumn.Name = "menuItemIDDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
             // 
-            // quantityDataGridViewTextBoxColumn
+            // transactionDateDataGridViewTextBoxColumn
             // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.transactionDateDataGridViewTextBoxColumn.DataPropertyName = "TransactionDate";
+            this.transactionDateDataGridViewTextBoxColumn.HeaderText = "TransactionDate";
+            this.transactionDateDataGridViewTextBoxColumn.Name = "transactionDateDataGridViewTextBoxColumn";
             // 
-            // priceDataGridViewTextBoxColumn
+            // statusDataGridViewTextBoxColumn
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             // 
-            // menuItemDataGridViewTextBoxColumn
+            // ordersDataGridViewTextBoxColumn
             // 
-            this.menuItemDataGridViewTextBoxColumn.DataPropertyName = "MenuItem";
-            this.menuItemDataGridViewTextBoxColumn.HeaderText = "MenuItem";
-            this.menuItemDataGridViewTextBoxColumn.Name = "menuItemDataGridViewTextBoxColumn";
+            this.ordersDataGridViewTextBoxColumn.DataPropertyName = "Orders";
+            this.ordersDataGridViewTextBoxColumn.HeaderText = "Orders";
+            this.ordersDataGridViewTextBoxColumn.Name = "ordersDataGridViewTextBoxColumn";
             // 
-            // orderDataGridViewTextBoxColumn
+            // restaurantTableDataGridViewTextBoxColumn
             // 
-            this.orderDataGridViewTextBoxColumn.DataPropertyName = "Order";
-            this.orderDataGridViewTextBoxColumn.HeaderText = "Order";
-            this.orderDataGridViewTextBoxColumn.Name = "orderDataGridViewTextBoxColumn";
+            this.restaurantTableDataGridViewTextBoxColumn.DataPropertyName = "RestaurantTable";
+            this.restaurantTableDataGridViewTextBoxColumn.HeaderText = "RestaurantTable";
+            this.restaurantTableDataGridViewTextBoxColumn.Name = "restaurantTableDataGridViewTextBoxColumn";
+            // 
+            // transactionBindingSource
+            // 
+            this.transactionBindingSource.DataSource = typeof(Restaurant_System.Transaction);
             // 
             // History
             // 
@@ -325,9 +326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
