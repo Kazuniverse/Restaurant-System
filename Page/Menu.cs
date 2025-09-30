@@ -27,9 +27,9 @@ namespace Restaurant_System.Page
                     {
                         o.MenuItemID,
                         o.Name,
-                        o.Price,
+                        Price = "Rp. " + o.Price,
                         o.Description,
-                        CategoryID = o.Category.CategoryID,
+                        o.Category.CategoryID,
                         Category = o.Category.Name
                     })
                     .ToList();
