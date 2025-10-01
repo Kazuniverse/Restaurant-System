@@ -19,6 +19,7 @@ namespace Restaurant_System.Page
         }
 
         void LoadData()
+
         {
             using (var db = new HovSedhepDatabaseEntities())
             {
@@ -34,6 +35,18 @@ namespace Restaurant_System.Page
                     })
                     .ToList();
                 menuItemBindingSource.DataSource = menuItems;
+
+                var categories = db.Categories
+                    .Select(c => new
+                    {
+                        c.CategoryID,
+                        c.Name
+                    })
+                    .ToList();
+                comboBox1.DataSource = categories;
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "CategoryID";
+                comboBox1.SelectedIndex = -1;
             }
         }
 
@@ -45,6 +58,42 @@ namespace Restaurant_System.Page
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        void ApplyFilter()
+        {
+            int SelectedCategoryID = (int)(comboBox1.SelectedValue ?? -1);
+            string searchText = textBox2.Text.ToLower();
+
+            using (var db = new HovSedhepDatabaseEntities())
+            { 
+                var filteredMenuItems = db.MenuItems
+                    .Where(o => (SelectedCategoryID == -1 || o.Category.CategoryID == SelectedCategoryID) &&
+                                (string.IsNullOrEmpty(searchText) || o.Name.ToLower().Contains(searchText)))
+                    .Select(o => new
+                    {
+                        o.MenuItemID,
+                        o.Name,
+                        Price = "Rp. " + o.Price,
+                        o.Description,
+                        o.Category.CategoryID,
+                        Category = o.Category.Name
+                    })
+                    .ToList();
+                menuItemBindingSource.DataSource = filteredMenuItems;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ApplyFilter();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = -1;
+            textBox2.Clear();
+            ApplyFilter();
         }
     }
 }
