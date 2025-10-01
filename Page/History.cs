@@ -45,7 +45,65 @@ namespace Restaurant_System.Page
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            LoadOrder();
+        }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Long;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = " ";
+            comboBox1.SelectedIndex = -1;
+        }
+
+        void LoadOrder()
+        {
+            using (var db = new HovSedhepDatabaseEntities())
+            {
+                int transactionID = (int)dataGridView1.CurrentRow.Cells["transactionIDDataGridViewTextBoxColumn"].Value;
+
+                var orders = db.Orders
+                    .Where(o => o.TransactionID == transactionID)
+                    .Select(od => new
+                    {
+                        od.OrderID,
+                        od.TransactionID,
+                        od.OrderTime,
+                        Employee = od.Employee.Name,
+                        OrderDetails = od.OrderDetails.Count
+                    })
+                    .ToList();
+                dataGridView2.DataSource = orders;
+            }
+        }
+
+        void LoadDetail()
+        {
+            using (var db = new HovSedhepDatabaseEntities())
+            {
+                int orderID = (int)dataGridView2.CurrentRow.Cells["orderIDDataGridViewTextBoxColumn"].Value;
+                var orderDetails = db.OrderDetails
+                    .Where(od => od.OrderID == orderID)
+                    .Select(od => new
+                    {
+                        od.OrderDetailID,
+                        od.OrderID,
+                        MenuItem = od.MenuItem.Name,
+                        Price = "Rp. " + od.MenuItem.Price,
+                        od.Quantity,
+                    })
+                    .ToList();
+                dataGridView3.DataSource = orderDetails;
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoadDetail();
         }
     }
 }
