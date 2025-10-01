@@ -21,5 +21,13 @@ namespace Restaurant_System.Page
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            AsignForm asignForm = new AsignForm(btn.Text);
+            asignForm.StartPosition = FormStartPosition.CenterParent;
+            asignForm.ShowDialog();
+        }
     }
 }

@@ -64,6 +64,12 @@
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Page\AsignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\AsignForm.Designer.cs">
+      <DependentUpon>AsignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Page\AsignForm.resx">
+      <DependentUpon>AsignForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

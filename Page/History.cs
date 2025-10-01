@@ -35,6 +35,17 @@ namespace Restaurant_System.Page
                     })
                     .ToList();
                 dataGridView1.DataSource = transactions;
+
+                var dropTrans = db.RestaurantTables
+                    .Select(t => new {
+                        t.TableID,
+                        t.Name
+                    })
+                    .ToList();
+                comboBox1.DataSource = dropTrans;
+                comboBox1.DisplayMember = "Name";
+                comboBox1.ValueMember = "TableID";
+                comboBox1.SelectedIndex = -1;
             }
         }
 
@@ -58,6 +69,7 @@ namespace Restaurant_System.Page
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = " ";
             comboBox1.SelectedIndex = -1;
+            LoadData();
         }
 
         void LoadOrder()
@@ -104,6 +116,32 @@ namespace Restaurant_System.Page
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             LoadDetail();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime selectedDate = dateTimePicker1.Value.Date;
+            int selectedStatus = (int)(comboBox1.SelectedValue ?? -1);
+
+            using (var db = new HovSedhepDatabaseEntities())
+            {
+                var fiter = db.Transactions
+                    .Where(t => (dateTimePicker1.Format != DateTimePickerFormat.Custom ? t.TransactionDate == selectedDate : true) &&
+                                (selectedStatus == -1 || t.RestaurantTable.TableID == selectedStatus))
+                    .Select(t => new
+                    {
+                        t.TransactionID,
+                        RestaurantTable = t.RestaurantTable.Name,
+                        t.TransactionDate,
+                        t.CustomerName,
+                        t.Status,
+                        Orders = "Rp. " + (t.Orders
+                            .SelectMany(o => o.OrderDetails)
+                            .Sum(od => (decimal?)od.Quantity * od.MenuItem.Price) ?? 0)
+                    })
+                    .ToList();
+                dataGridView1.DataSource = fiter;
+            }
         }
     }
 }
