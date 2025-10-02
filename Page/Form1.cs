@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Restaurant_System.Page;
+using Restaurant_System.Properties;
 
 namespace Restaurant_System
 {
@@ -37,17 +38,45 @@ namespace Restaurant_System
             panelContainer.Visible = false;
 
             panelContainer.Controls.Clear();
-            Dock = DockStyle.Fill;
+            halaman.Dock = DockStyle.Fill;
             
 
             panelContainer.Controls.Add(halaman);
 
             panelContainer.Visible = true;
+
+            buttonChange();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadPage(new TableSeating());
+        }
+
+        void buttonChange()
+        {
+            if (panelContainer.Controls.Count > 0)
+            {
+                var page = panelContainer.Controls[0];
+                if (page is History)
+                {
+                    button3.BackgroundImage = Resources.square;
+                    button1.BackgroundImage = Resources.square_dis;
+                    button2.BackgroundImage = Resources.square_dis;
+                }
+                else if (page is TableSeating)
+                {
+                    button1.BackgroundImage = Resources.square;
+                    button2.BackgroundImage = Resources.square_dis;
+                    button3.BackgroundImage = Resources.square_dis;
+                }
+                else if (page is Page.Menu) 
+                {
+                    button2.BackgroundImage = Resources.square;
+                    button1.BackgroundImage = Resources.square_dis;
+                    button3.BackgroundImage = Resources.square_dis;
+                }
+            }
         }
     }
 }

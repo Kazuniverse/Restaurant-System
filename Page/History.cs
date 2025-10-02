@@ -143,5 +143,16 @@ namespace Restaurant_System.Page
                 dataGridView1.DataSource = fiter;
             }
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "Status" && e.Value != null)
+            {
+                string latest = e.Value.ToString();
+                if (latest == "Ongoing") dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                else if (latest == "Completed") dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                else if (latest == "Cancelled") dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;
+            }
+        }
     }
 }

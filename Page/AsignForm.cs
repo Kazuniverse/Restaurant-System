@@ -23,13 +23,17 @@ namespace Restaurant_System.Page
 
         private void AsignForm_Load(object sender, EventArgs e)
         {
-            using (var db = new HovSedhepDatabaseEntities())
-            {
-                comboBox1.DataSource = db.Employees.ToList();
-                comboBox1.DisplayMember = "Name";
-                comboBox1.ValueMember = "EmployeeID";
-                comboBox1.SelectedIndex = -1;
-            }
+            if (tableId <= 4) numericUpDown1.Maximum = 2;
+            else if (tableId <= 6) numericUpDown1.Maximum = 4;
+            else numericUpDown1.Maximum = 6;
+
+                using (var db = new HovSedhepDatabaseEntities())
+                {
+                    comboBox1.DataSource = db.Employees.ToList();
+                    comboBox1.DisplayMember = "Name";
+                    comboBox1.ValueMember = "EmployeeID";
+                    comboBox1.SelectedIndex = -1;
+                }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,9 +45,20 @@ namespace Restaurant_System.Page
                 return;
             }
 
+            int pax = (int)numericUpDown1.Value;
+
+            int adjustTable;
+            if (pax <= 2) adjustTable = 2;
+            else if (pax <= 4) adjustTable = 4;
+            else adjustTable = 6;
+
             int selectedEmp = (int)(comboBox1.SelectedValue ?? -1);
+
             using (var db = new HovSedhepDatabaseEntities())
             {
+                var table = db.RestaurantTables.FirstOrDefault(t => t.TableID == tableId);
+                if (table != null) table.Capacity = adjustTable;
+
                 var trans = new Transaction
                 {
                     TableID = tableId,
@@ -56,6 +71,12 @@ namespace Restaurant_System.Page
             }
                 
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }
