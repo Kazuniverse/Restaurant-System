@@ -14,6 +14,8 @@ namespace Restaurant_System
 {
     public partial class Form1 : Form
     {
+        private UserControl currentPage;
+
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +47,8 @@ namespace Restaurant_System
 
             panelContainer.Visible = true;
 
+            currentPage = halaman;
+
             buttonChange();
         }
 
@@ -55,28 +59,16 @@ namespace Restaurant_System
 
         void buttonChange()
         {
-            if (panelContainer.Controls.Count > 0)
-            {
-                var page = panelContainer.Controls[0];
-                if (page is History)
-                {
-                    button3.BackgroundImage = Resources.square;
-                    button1.BackgroundImage = Resources.square_dis;
-                    button2.BackgroundImage = Resources.square_dis;
-                }
-                else if (page is TableSeating)
-                {
-                    button1.BackgroundImage = Resources.square;
-                    button2.BackgroundImage = Resources.square_dis;
-                    button3.BackgroundImage = Resources.square_dis;
-                }
-                else if (page is Page.Menu) 
-                {
-                    button2.BackgroundImage = Resources.square;
-                    button1.BackgroundImage = Resources.square_dis;
-                    button3.BackgroundImage = Resources.square_dis;
-                }
-            }
+            button1.BackgroundImage = Resources.square_dis;
+            button2.BackgroundImage = Resources.square_dis;
+            button3.BackgroundImage = Resources.square_dis;
+
+            if (currentPage is TableSeating)
+                button1.BackgroundImage = Resources.square;
+            else if (currentPage is Page.Menu)
+                button2.BackgroundImage = Resources.square;
+            else if (currentPage is History)
+                button3.BackgroundImage = Resources.square;
         }
     }
 }
