@@ -68,6 +68,16 @@ namespace Restaurant_System.Page
                 };
                 db.Transactions.Add(trans);
                 db.SaveChanges();
+
+                var order = new Order
+                {
+                    TransactionID = trans.TransactionID,
+                    EmployeeID = selectedEmp,
+                    OrderTime = DateTime.Now,
+                };
+
+                db.Orders.Add(order);
+                db.SaveChanges();
             }
                 
             this.DialogResult = DialogResult.OK;
